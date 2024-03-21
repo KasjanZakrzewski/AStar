@@ -12,19 +12,21 @@ class Cell:
 
 class Wall(Cell):
     def __init__(self):
-        self.neighbours = []
+        super().__init__("w", "w")
+        # self.neighbours = []
         self.char = "#"
-        self.x = "w"
-        self.y = "w"
+        # self.x = "w"
+        # self.y = "w"
     None
 
 class Empty(Cell):
     def __init__(self, x, y):
-        self.neighbours = []
+        super().__init__(x, y)
+        # self.neighbours = []
         self.came = []
         self.char = "."
-        self.x = x
-        self.y = y
+        # self.x = x
+        # self.y = y
         self.f = 10000 #!!!!! do zmiany jak tablica będzie ogromna
         self.g = 10000
         self.h = 0

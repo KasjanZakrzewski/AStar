@@ -47,21 +47,23 @@ class Cell:
 
 class Wall(Cell):
     def __init__(self, x, y, canvas):
-        self.neighbours = []
+        super().__init__(x, y)
+        # self.neighbours = []
         self.color = WALL
-        self.x = x
-        self.y = y
+        # self.x = x
+        # self.y = y
 
         self.rectangle = canvas.create_rectangle(x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=self.color)
 
 
 class Empty(Cell):
     def __init__(self, x, y, canvas):
-        self.neighbours = []
+        super().__init__(x, y)
+        # self.neighbours = []
         self.came = []
         self.color = EMPTY
-        self.x = x
-        self.y = y
+        # self.x = x
+        # self.y = y
         self.f = 100000 #!!!!! do zmiany jak tablica będzie ogromna
         self.g = 100000
         self.h = 0
